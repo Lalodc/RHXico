@@ -27,6 +27,7 @@
     <script src="dist/js/bootstrap-select.js"></script>
     <link rel="stylesheet" href="css/dragula.min.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/aspirante.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -89,52 +90,539 @@
           </li>
         </ul>
       </div>
-      <div id="page-wrapper">
-        <div class="row">
-          <div class="col-lg-12"><br>
+      <div id="page-wrapper"><br>
+        <div class="row text-center">
+          <button type="button" class="btn btn-success btn-lg btn-outline">Marcar como aprobado <span class="fa fa-thumbs-up" aria-hidden="true"></span></button>
+          <button type="button" class="btn btn-danger btn-lg btn-outline">Marcar como no apto <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+          <button type="button" class="btn btn-primary btn-lg btn-outline">Entrevistar</button>
+        </div>
+        <div class="container" style="margin-top: 30px;">
+          <div class="col-md-12">
             <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">Solicitudes</h3>
-              </div>
               <div class="panel-body">
-                <div class="form-inline">
-                  <div class="form-group">
-                    <label for="departamento">Departamento:</label>
-                    <select class="form-control" name="departamento" id="departamento">
-                      <option disabled selected value="">Seleccionar</option>
-                      <option value="administrativo">Administrativo</option>
-                      <option value="planta">Planta</option>
-                      <option value="tiendas">Tienda</option>
-                    </select>
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                  <div style="width: 200px;" class="thumbnail">
+                    <img src="http://lorempixel.com/200/200/" class="aspirante-foto img-responsive"/>
                   </div>
-                  <div class="form-group">
-                    <label for="puesto">Puesto:</label>
-                    <select class="form-control" name="puesto" id="puesto">
-                      <option disabled selected value="">Seleccionar</option>
-                    </select>
+                </div>
+                <div class="col-md-9 col-sm-5 col-xs-12 col-lg-9">
+                  <h2>Eduardo De la Cruz Avila <span class="pull-right badge" style="background-color: orange; font-size: 20px;">En entrevista</span></span></h2>
+                  <strong>Ingeniero en sistemas computacionales</strong>
+                  <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="glyphicon glyphicon-briefcase"></span> 9 years</li>
+                    <li><span class="glyphicon glyphicon-map-marker"></span> India</li>
+                    <li><span class="glyphicon glyphicon-home"></span> Chamiers Towers (East Wing), 5<sup>th</sup> Floor, No: 37,<br/>   Chamiers Road, Teynampet, Chennai-600018 </li>
+                    <li><span class="glyphicon glyphicon-phone"></span> <a href="#" title="call">(+91) 9840550049</a></li>
+                    <li><span class="glyphicon glyphicon-envelope"></span> <a href="#" title="mail">vijayan@rsicms.com</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="col-md-12">
+            <div data-spy="scroll" class="panel panel-default">
+              <div class="panel-body">
+              <div class="tabbable-line">
+                <ul class="nav nav-tabs ">
+                  <li class="active">
+                    <a href="#tab_default_1" data-toggle="tab">Datos personales</a>
+                  </li>
+                  <li>
+                    <a href="#tab_default_2" data-toggle="tab">Educación</a>
+                  </li>
+                  <li>
+                    <a href="#tab_default_3" data-toggle="tab">Experiencia laboral</a>
+                  </li>
+                  <li>
+                    <a href="#tab_default_4" data-toggle="tab">Contact Details</a>
+                  </li>
+                  <li>
+                    <a href="#tab_default_5" data-toggle="tab">Address Details</a>
+                  </li>
+                  <li>
+                    <a href="#tab_default_6" data-toggle="tab">Resume</a>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="tab_default_1">
+                    <div class="well well-sm">
+                      <h4>Datos personales</h4>
+                    </div>
+                    <p align="right">
+                      <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                    </p>
+                    <form class="form-horizontal">
+                      <div class="form-group">
+                        <label class="col-sm-2 col-md-2 control-label">Nombre:</label>
+                        <div class="col-sm-10 col-md-10">
+                          <p class="form-control-static text-left">Eduardo De la Cruz Ávila</p>
+                        </div>
+                        <label class="col-sm-2 control-label">Correo electrónico:</label>
+                        <div class="col-sm-10">
+                          <p class="form-control-static text-left">eduardo@productosxico.com.mx</p>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane" id="tab_default_2">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                          <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsePrimaria" aria-expanded="true" aria-controls="collapsePrimaria">
+                              Primaria
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapsePrimaria" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <table class="table bio-table">
+                              <tbody>
+                                <tr>
+                                  <td>Firstname</td>
+                                  <td>: Vijayan</td>
+                                </tr>
+                                <tr>
+                                  <td>Lastname</td>
+                                  <td>: Karuppaiah</td>
+                                </tr>
+                                <tr>
+                                  <td>Date of Birthday</td>
+                                  <td>: 6 March 1980</td>
+                                </tr>
+                                <tr>
+                                  <td>Gender</td>
+                                  <td>: Male</td>
+                                </tr>
+                                <tr>
+                                  <td>Spouse </td>
+                                  <td>: Vijayalakshmi</td>
+                                </tr>
+                                <tr>
+                                  <td>Name of Children</td>
+                                  <td>: Darshan</td>
+                                </tr>
+                                <tr>
+                                  <td>Father's Name</td>
+                                  <td>: Karuppaiah</td>
+                                </tr>
+                                <tr>
+                                  <td>Mother's Name</td>
+                                  <td>: Palani Mayil</td>
+                                </tr>
+                                <tr>
+                                  <td>Citizenship</td>
+                                  <td>: Indian</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSecundaria" aria-expanded="false" aria-controls="collapseSecundaria">
+                              Secundaria
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseSecundaria" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                          <div class="panel-body">
+                            <table class="table bio-table">
+                              <tbody>
+                                <tr>
+                                  <td>Firstname</td>
+                                  <td>: Vijayan</td>
+                                </tr>
+                                <tr>
+                                  <td>Lastname</td>
+                                  <td>: Karuppaiah</td>
+                                </tr>
+                                <tr>
+                                  <td>Date of Birthday</td>
+                                  <td>: 6 March 1980</td>
+                                </tr>
+                                <tr>
+                                  <td>Gender</td>
+                                  <td>: Male</td>
+                                </tr>
+                                <tr>
+                                  <td>Spouse </td>
+                                  <td>: Vijayalakshmi</td>
+                                </tr>
+                                <tr>
+                                  <td>Name of Children</td>
+                                  <td>: Darshan</td>
+                                </tr>
+                                <tr>
+                                  <td>Father's Name</td>
+                                  <td>: Karuppaiah</td>
+                                </tr>
+                                <tr>
+                                  <td>Mother's Name</td>
+                                  <td>: Palani Mayil</td>
+                                </tr>
+                                <tr>
+                                  <td>Citizenship</td>
+                                  <td>: Indian</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Preparatoria
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                          <div class="panel-body">
+                            <table class="table bio-table">
+                              <tbody>
+                                <tr>
+                                  <td>Firstname</td>
+                                  <td>: Vijayan</td>
+                                </tr>
+                                <tr>
+                                  <td>Lastname</td>
+                                  <td>: Karuppaiah</td>
+                                </tr>
+                                <tr>
+                                  <td>Date of Birthday</td>
+                                  <td>: 6 March 1980</td>
+                                </tr>
+                                <tr>
+                                  <td>Gender</td>
+                                  <td>: Male</td>
+                                </tr>
+                                <tr>
+                                  <td>Spouse </td>
+                                  <td>: Vijayalakshmi</td>
+                                </tr>
+                                <tr>
+                                  <td>Name of Children</td>
+                                  <td>: Darshan</td>
+                                </tr>
+                                <tr>
+                                  <td>Father's Name</td>
+                                  <td>: Karuppaiah</td>
+                                </tr>
+                                <tr>
+                                  <td>Mother's Name</td>
+                                  <td>: Palani Mayil</td>
+                                </tr>
+                                <tr>
+                                  <td>Citizenship</td>
+                                  <td>: Indian</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Universidad
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                          <div class="panel-body">
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="tab_default_3">
+                    <div class="well well-sm">
+                      <h4>EMPLOYMENT RECORD</h4>
+                    </div>
+                    <p align="right">
+                      <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                    </p>
+                    <table class="table bio-table">
+                      <tbody>
+                        <tr>
+                          <td>Date</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Position</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Principle Activites</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Employer</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Type of Activites</td>
+                          <td>: </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <br/>
+                    <table class="table bio-table">
+                      <tbody>
+                        <tr>
+                          <td>Date</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Position</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Principle Activites</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Employer</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Type of Activites</td>
+                          <td>: </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <br/>
+                    <table class="table bio-table">
+                      <tbody>
+                        <tr>
+                          <td>Date</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Position</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Principle Activites</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Employer</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Type of Activites</td>
+                          <td>: </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="tab-pane" id="tab_default_4">
+                    <div class="well well-sm">
+                      <h4>OFFICIAL AND PERSONAL CONTACTS</h4>
+                    </div>
+                    <p align="right">
+                      <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                    </p>
+                    <table class="table bio-table">
+                      <tbody>
+                        <tr>
+                          <td>Office Telephone Number</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Office Mobile Phone</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Official Email Address</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Personal Mobile Phone</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Personal Email Address </td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Home Phone</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Facebook Account</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Twitter Account</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>Skype Account</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>LinkedIn Account</td>
+                          <td>: </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="tab-pane" id="tab_default_5">
+                    <div class="well well-sm">
+                      <h4>ADDRESS DETAILS</h4>
+                    </div>
+                    <p align="right">
+                      <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                    </p>
+                    <table class="table bio-table">
+                      <thead>
+                        <tr>
+                          <th colspan="2">Present Residential Address</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>   Line 1</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>   Line 2</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>   City</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>   State</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>   Country</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>   Pin code</td>
+                          <td>: </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <br/>
+                    <table class="table bio-table">
+                      <thead>
+                        <tr>
+                          <th colspan="2">Permanent Residential Address</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>   Plot No / Door No / Part No / Block No</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>   Street Name</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>   City</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>   State</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>   Country</td>
+                          <td>: </td>
+                        </tr>
+                        <tr>
+                          <td>   Pin code</td>
+                          <td>: </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="tab-pane" id="tab_default_6">
+                    <div class="well well-sm">
+                      <h4>ADDRESS DETAILS</h4>
+                    </div>
+                    <p align="right">
+                      <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                    </p>
+                    <div class="row">
+                      <div class="col-md-4 col-md-offset-4">
+                        <form class="form-horizontal" role="form">
+                          <fieldset>
+                            <!-- Form Name -->
+                            <legend>Address Details</legend>
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-sm-2 control-label" for="textinput">Line 1</label>
+                              <div class="col-sm-10">
+                                <input type="text" placeholder="Address Line 1" class="form-control">
+                              </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-sm-2 control-label" for="textinput">Line 2</label>
+                              <div class="col-sm-10">
+                                <input type="text" placeholder="Address Line 2" class="form-control">
+                              </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-sm-2 control-label" for="textinput">City</label>
+                              <div class="col-sm-10">
+                                <input type="text" placeholder="City" class="form-control">
+                              </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-sm-2 control-label" for="textinput">State</label>
+                              <div class="col-sm-4">
+                                <input type="text" placeholder="State" class="form-control">
+                              </div>
+                              <label class="col-sm-2 control-label" for="textinput">Postcode</label>
+                              <div class="col-sm-4">
+                                <input type="text" placeholder="Post Code" class="form-control">
+                              </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-sm-2 control-label" for="textinput">Country</label>
+                              <div class="col-sm-10">
+                                <input type="text" placeholder="Country" class="form-control">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-offset-2 col-sm-10">
+                                <div class="pull-right">
+                                  <button type="submit" class="btn btn-default">Cancel</button>
+                                  <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </form>
+                      </div><!-- /.col-lg-12 -->
+                    </div><!-- /.row -->
                   </div>
                 </div>
               </div>
-              <table id="tablaPedidos" class="table table-condensed table-bordered table-striped table-hover" style="margin-top:15px;">
-                <thead id="theadTablaSolicitudes">
-                  <tr>
-                    <th>Nombre</th>
-                    <th>Sexo</th>
-                    <th>Edad</th>
-                    <th>Correo</th>
-                    <th>Celular</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody id="tbodyTablaSolicitudes">
-                  <tr>
-
-                  </tr>
-                </tbody>
-              </table>
             </div>
-          </div><!-- /.col-lg-12 -->
-        </div><!-- /.row -->
+            </div>
+          </div>
+        </div>
       </div><!-- /#page-wrapper -->
     </div><!-- /#wrapper -->
     <!-- jQuery -->
@@ -189,7 +677,7 @@
     </script>
     <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/$VERSION/dragula.min.js'></script>-->
     <script src="js/dragula.min.js"></script>
-    <script src="js/solicitudes.js"></script>
+    <script src="js/aspirante.js"></script>
     <script src="js/moment-with-locales.js"></script>
   </body>
 </html>

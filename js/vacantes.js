@@ -6,45 +6,23 @@ function logout() {
   auth.signOut();
 }
 
-function mostrarSolicitudes() {
-  let solicitudesRef = db.ref('aspirantes');
-  solicitudesRef.on('value', function(snapshot) {
-    let aspirantes = snapshot.val();
+function mostrarVacantes() {
+  let vacantesRef = db.ref('vacantes/');
+  vacantesRef.on('value', function(snapshot) {
+    let vacantes = snapshot.val();
     let trs = "";
-    let i = 1;
 
-    $('.loader').remove();
-    for(let aspirante in aspirantes) {
-      if( i%2 == 0 ) {
-        trs += `<tr class="info">
-                  <td>${i}</td>
-                  <td>${aspirantes[aspirante].nombre} ${aspirantes[aspirante].apellidos}</td>
-                  <td>${aspirantes[aspirante].sexo}</td>
-                  <td>${aspirantes[aspirante].edad}</td>
-                  <td>${aspirantes[aspirante].email}</td>
-                  <td>${aspirantes[aspirante].celular}</td>
-                  <td class="text-center"><a href="aspirante.html?id=${aspirante}" class="btn btn-primary btn-xs">Ver más <i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i></a></td>
-                </tr>`;
-      }
-      else {
-        trs += `<tr>
-                  <td>${i}</td>
-                  <td>${aspirantes[aspirante].nombre} ${aspirantes[aspirante].apellidos}</td>
-                  <td>${aspirantes[aspirante].sexo}</td>
-                  <td>${aspirantes[aspirante].edad}</td>
-                  <td>${aspirantes[aspirante].email}</td>
-                  <td>${aspirantes[aspirante].celular}</td>
-                  <td class="text-center"><a href="aspirante.html?id=${aspirante}" class="btn btn-primary btn-xs">Ver más <i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i></a></td>
-                </tr>`;
-      }
-      i++;
+    console.log(vacantes);
+    for(let vacante in vacantes) {
+      trs += `<tr>
+                <td>${vacantes[vacante].nombre}</td>
+                <td><a href="${vacantes[vacante].url}" target="_blank">${vacantes[vacante].url}</a></td>
+              </tr>`;
     }
-    $('#tbodyTablaSolicitudes').html(trs);
-    $('#tablaSolicitudes').removeClass('hidden');
-  })
-}
 
-mostrarSolicitudes();
+    $('#tbodyTablaVacantes').html(trs);
+  });
+}
 
 function haySesion() {
   auth.onAuthStateChanged(function (user) {
@@ -94,6 +72,21 @@ function mostrarNotificaciones() {
   });
 }
 
+function mostrarContador() {
+  let uid = auth.currentUser.uid;
+  let notificacionesRef = db.ref('notificaciones/almacen/'+uid);
+  notificacionesRef.on('value', function(snapshot) {
+    let cont = snapshot.val().cont;
+
+    if(cont > 0) {
+      $('#spanNotificaciones').html(cont).show();
+    }
+    else {
+      $('#spanNotificaciones').hide();
+    }
+  });
+}
+
 function verNotificaciones() {
   let uid = auth.currentUser.uid;
   let notificacionesRef = db.ref('notificaciones/almacen/'+uid);
@@ -102,4 +95,9 @@ function verNotificaciones() {
 
 $('#campana').click(function() {
   verNotificaciones();
+});
+
+$(document).ready(function() {
+  $('[data-toggle="tooltip"]').tooltip();
+  mostrarVacantes();
 });

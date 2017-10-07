@@ -27,6 +27,7 @@
     <script src="dist/js/bootstrap-select.js"></script>
     <link rel="stylesheet" href="css/dragula.min.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/loader.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -92,7 +93,7 @@
       <div id="page-wrapper">
         <div class="row">
           <div class="col-lg-12"><br>
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
               <div class="panel-heading">
                 <h3 class="panel-title">Solicitudes</h3>
               </div>
@@ -115,24 +116,85 @@
                   </div>
                 </div>
               </div>
-              <table id="tablaPedidos" class="table table-condensed table-bordered table-striped table-hover" style="margin-top:15px;">
-                <thead id="theadTablaSolicitudes">
-                  <tr>
-                    <th>Nº</th>
-                    <th>Nombre</th>
-                    <th>Sexo</th>
-                    <th>Edad</th>
-                    <th>Correo</th>
-                    <th>Celular</th>
-                    <th>Detalles</th>
-                  </tr>
-                </thead>
-                <tbody id="tbodyTablaSolicitudes">
-                  <tr>
+              <div>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation" class="active"><a href="#todas" aria-controls="todas" role="tab" data-toggle="tab">Todas</a></li>
+                  <li role="presentation"><a href="#revisadas" aria-controls="revisadas" role="tab" data-toggle="tab">Revisadas</a></li>
+                  <li role="presentation"><a href="#aprobadas" aria-controls="aprobadas" role="tab" data-toggle="tab">Aprobadas</a></li>
+                  <li role="presentation"><a href="#noAptos" aria-controls="noAptos" role="tab" data-toggle="tab">No aptos</a></li>
+                  <li role="presentation"><a href="#entrevista" aria-controls="entrevista" role="tab" data-toggle="tab">Listos para entrevista</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="todas">
+                    <div id="loaderTodas" class="loader"></div>
+                    <table id="tablaSolicitudes" class="hidden table table-condensed table-bordered table-striped table-hover" style="margin-top:15px;">
+                      <thead id="theadTablaSolicitudes">
+                        <tr>
+                          <th>Nº</th>
+                          <th>Nombre</th>
+                          <th>Sexo</th>
+                          <th>Edad</th>
+                          <th>Correo</th>
+                          <th>Celular</th>
+                          <th>Detalles</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbodyTablaSolicitudes">
+                        <tr>
 
-                  </tr>
-                </tbody>
-              </table>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="revisadas">
+                    <div id="loaderRevisadas" class="loader"></div>
+                    <table id="tablaSolicitudes" class="hidden table table-condensed table-bordered table-striped table-hover" style="margin-top:15px;">
+                      <thead id="theadTablaRevisadas">
+                        <tr>
+                          <th>Nº</th>
+                          <th>Nombre</th>
+                          <th>Sexo</th>
+                          <th>Edad</th>
+                          <th>Correo</th>
+                          <th>Celular</th>
+                          <th>Detalles</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbodyTablaSolicitudes">
+                        <tr>
+
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="aprobadas">
+                    <div id="loaderRevisadas" class="loader"></div>
+                    <table id="tablaSolicitudes" class="hidden table table-condensed table-bordered table-striped table-hover" style="margin-top:15px;">
+                      <thead id="theadTablaRevisadas">
+                        <tr>
+                          <th>Nº</th>
+                          <th>Nombre</th>
+                          <th>Sexo</th>
+                          <th>Edad</th>
+                          <th>Correo</th>
+                          <th>Celular</th>
+                          <th>Detalles</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbodyTablaSolicitudes">
+                        <tr>
+
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="noAptos">No aptos</div>
+                  <div role="tabpanel" class="tab-pane" id="entrevista">Listos para entrevista</div>
+                </div>
+
+              </div>
             </div>
           </div><!-- /.col-lg-12 -->
         </div><!-- /.row -->

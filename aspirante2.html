@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href='logo.ico' rel='shortcut icon' type='image/x-icon'/>
+
+    <title>Usuarios</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Morris Charts CSS -->
+    <link href="vendor/morrisjs/morris.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/bootstrap-select.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="dist/js/bootstrap-select.js"></script>
+    <link rel="stylesheet" href="css/dragula.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/aspirante.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- Navigation -->
+      <nav class="navbar navbar-default navbar-static-top fixed" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img class="navbar-brand" id="logo" src="logo.png"></img>
+        </div>
+        <!-- /.navbar-header -->
+        <ul class="nav navbar-top-links navbar-right no-padding ">
+          <li id="campana" onclick="mostrarNotificaciones()" class="dropdown no-padding">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <!--<i class="fa fa-bell fa-fw"></i>-->
+              <i class="fa fa-bell-o" style="font-size: 25px;" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Notificaciones"></i>
+              <span id="spanNotificaciones" style="background-color: red; display: none;" class="badge"></span>
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <ul id="contenedorNotificaciones" class="dropdown-menu dropdown-alerts">
+
+            </ul>
+            <!-- /.dropdown-alerts -->
+          </li>
+          <li><img src="http://lorempixel.com/40/40/" alt="..." class="img-circle"> </li>
+          <li class="dropdown no-padding">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-alerts">
+              <li class="divider"></li>
+              <li>
+                <a onclick="logout()"><span class="glyphicon glyphicon-off"></span> Cerrar sesión</a>
+              </li>
+            </ul>
+            <!-- /.dropdown-alerts -->
+          </li>
+          <!-- /.dropdown -->
+        </ul>
+        <!-- /.navbar-top-links -->
+      </nav>
+      <div class="barside">
+        <img class="navbar-brand" id="logo" src="logo.png"></img>
+        <ul style="margin-top:50px; list-style:none; font-size:50px; color:white; padding:28px;">
+          <li>
+            <a style="color:white; text-decoration: none;" href="panel.html" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <span style="font-size:50px;" class="material-icons no-padding">dvr</span>
+              <p style="white; font-size:11px; width:200px; margin-left:-14px; margin-top:-15px;">Volver al panel</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="container">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Datos del aspirante</h3>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <button class="btn btn-success">Marcar como aprobado <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                    <button class="btn btn-danger">Marcar como no apto <i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                    <button class="btn btn-primary">Entrevistar <i class="fa fa-clock-o" aria-hidden="true"></i></button>
+                    <button class="btn btn-success">Marcar como no apto</button>
+                  </div>
+                </div>
+                <div class="container" style="margin-top: 30px;">
+    <div class="profile-head">
+        <!--col-md-4 col-sm-4 col-xs-12 close-->
+        <div class="col-md- col-sm-4 col-xs-12">
+            <img src="http://www.newlifefamilychiropractic.net/wp-content/uploads/2014/07/300x300.gif" class="img-responsive"/>
+            <h6>Vijayan Karuppaiah</h6>
+            <div class="container"style="margin-left: 90px;">
+                <span class="btn btn-default uplod-file">
+                        Upload Photo <input type="file" />
+                </span>
+            </div>
+        </div>
+        <!--col-md-4 col-sm-4 col-xs-12 close-->
+
+        <div class="col-md-5 col-sm-5 col-xs-12">
+            <h5>Vijayan Karuppaiah</h5>
+            <p>Content Designer / Content Engineer </p>
+            <ul>
+                <li><span class="glyphicon glyphicon-briefcase"></span> 9 years</li>
+                <li><span class="glyphicon glyphicon-map-marker"></span> India</li>
+                <li><span class="glyphicon glyphicon-home"></span> Chamiers Towers (East Wing), 5<sup>th</sup> Floor, No: 37,<br/>    Chamiers Road, Teynampet, Chennai-600018 </li>
+                <li><span class="glyphicon glyphicon-phone"></span> <a href="#" title="call">(+91) 9840550049</a></li>
+                <li><span class="glyphicon glyphicon-envelope"></span><a href="#" title="mail">vijayan@rsicms.com</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--profile-head close-->
+</div>
+<!--container close-->
+
+
+<br/>
+<br/>
+
+
+              </div>
+            </div></div>
+            <div class="container">
+                <div class="col-md-12">
+                    <div data-spy="scroll" class="tabbable-panel">
+                        <div class="tabbable-line">
+                            <ul class="nav nav-tabs ">
+                                <li class="active">
+                                    <a href="#tab_default_1" data-toggle="tab">Personal Info </a>
+                                </li>
+                                <li>
+                                    <a href="#tab_default_2" data-toggle="tab">Education</a>
+                                </li>
+                                <li>
+                                    <a href="#tab_default_3" data-toggle="tab">Work Experience</a>
+                                </li>
+                                <li>
+                                    <a href="#tab_default_4" data-toggle="tab">Contact Details</a>
+                                </li>
+                                <li>
+                                    <a href="#tab_default_5" data-toggle="tab">Address Details</a>
+                                </li>
+                                <li>
+                                    <a href="#tab_default_6" data-toggle="tab">Resume</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab_default_1">
+                                    <div class="well well-sm">
+                                        <h4>PERSONAL DATA</h4>
+                                    </div>
+                                <p align="right">
+                                    <button type="button" class="btn btn-default btn-sm">
+                                        <span class="glyphicon glyphicon-edit"></span> Edit</button>
+                                </p>
+                                <table class="table bio-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Firstname</td>
+                                            <td>: Vijayan</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lastname</td>
+                                            <td>: Karuppaiah</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date of Birthday</td>
+                                            <td>: 6 March 1980</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Gender</td>
+                                            <td>: Male</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Spouse </td>
+                                            <td>: Vijayalakshmi</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Name of Children</td>
+                                            <td>: Darshan</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Father's Name</td>
+                                            <td>: Karuppaiah</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mother's Name</td>
+                                            <td>: Palani Mayil</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Citizenship</td>
+                                            <td>: Indian</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="tab-pane" id="tab_default_2">
+                                <div class="well well-sm">
+                                    <h4>EDUCATIONAL BACKGROUND</h4>
+                                </div>
+                                <p align="right">
+                                    <button type="button" class="btn btn-default btn-sm">
+                                        <span class="glyphicon glyphicon-edit"></span> Edit</button>
+                                </p>
+                                <table class="table bio-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Elementary School</td>
+                                            <td>: </td>
+                                            <td>Year Graduated</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>High School</td>
+                                            <td>: </td>
+                                            <td>Year Graduated</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Under Graduate</td>
+                                            <td>: </td>
+                                            <td>Year Graduated</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Post Graduate</td>
+                                            <td>: </td>
+                                            <td>Year Graduated</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Master of Philosophy (MPhil)</td>
+                                            <td>: </td>
+                                            <td>Year Graduated </td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Doctor of Philosophy (PhD)</td>
+                                            <td>: </td>
+                                            <td>Year Graduated</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bachelor of Engineering (B.Eng)<br/>Bachelor of Technology (B.Tech)</td>
+                                            <td>: </td>
+                                            <td>Year Graduated</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Master of Engineering (M.Eng)<br/>Master of Technology (M.Tech)</td>
+                                            <td>: </td>
+                                            <td>Year Graduated</td>
+                                            <td>: </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="tab-pane" id="tab_default_3">
+                                <div class="well well-sm">
+                                    <h4>EMPLOYMENT RECORD</h4>
+                                </div>
+                                <p align="right">
+                                    <button type="button" class="btn btn-default btn-sm">
+                                        <span class="glyphicon glyphicon-edit"></span> Edit</button>
+                                </p>
+                                <table class="table bio-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Date</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Position</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Principle Activites</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Employer</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Type of Activites</td>
+                                            <td>: </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <br/>
+
+                                <table class="table bio-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Date</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Position</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Principle Activites</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Employer</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Type of Activites</td>
+                                            <td>: </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <br/>
+
+                                <table class="table bio-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Date</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Position</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Principle Activites</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Employer</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Type of Activites</td>
+                                            <td>: </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="tab-pane" id="tab_default_4">
+                                <div class="well well-sm">
+                                    <h4>OFFICIAL AND PERSONAL CONTACTS</h4>
+                                </div>
+                                <p align="right">
+                                    <button type="button" class="btn btn-default btn-sm">
+                                        <span class="glyphicon glyphicon-edit"></span> Edit</button>
+                                </p>
+                                <table class="table bio-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Office Telephone Number</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Office Mobile Phone</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Official Email Address</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Personal Mobile Phone</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Personal Email Address </td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Home Phone</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Facebook Account</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Twitter Account</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Skype Account</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>LinkedIn Account</td>
+                                            <td>: </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="tab-pane" id="tab_default_5">
+                                <div class="well well-sm">
+                                    <h4>ADDRESS DETAILS</h4>
+                                </div>
+                                <p align="right">
+                                    <button type="button" class="btn btn-default btn-sm">
+                                        <span class="glyphicon glyphicon-edit"></span> Edit</button>
+                                </p>
+                                <table class="table bio-table">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Present Residential Address</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>   Line 1</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>   Line 2</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>   City</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>   State</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>   Country</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>   Pin code</td>
+                                            <td>: </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <br/>
+
+                                <table class="table bio-table">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Permanent Residential Address</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>   Plot No / Door No / Part No / Block No</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>   Street Name</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>   City</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>   State</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>   Country</td>
+                                            <td>: </td>
+                                        </tr>
+                                        <tr>
+                                            <td>   Pin code</td>
+                                            <td>: </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                            <div class="tab-pane" id="tab_default_6">
+                                <div class="well well-sm">
+                                    <h4>ADDRESS DETAILS</h4>
+                                </div>
+                                <p align="right">
+                                    <button type="button" class="btn btn-default btn-sm">
+                                        <span class="glyphicon glyphicon-edit"></span> Edit</button>
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-4 col-md-offset-4">
+                                        <form class="form-horizontal" role="form">
+                                            <fieldset>
+                                            <!-- Form Name -->
+                                                <legend>Address Details</legend>
+                                                <!-- Text input-->
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="textinput">Line 1</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" placeholder="Address Line 1" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <!-- Text input-->
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="textinput">Line 2</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" placeholder="Address Line 2" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <!-- Text input-->
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="textinput">City</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" placeholder="City" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <!-- Text input-->
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="textinput">State</label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" placeholder="State" class="form-control">
+                                                    </div>
+                                                    <label class="col-sm-2 control-label" for="textinput">Postcode</label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" placeholder="Post Code" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <!-- Text input-->
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" for="textinput">Country</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" placeholder="Country" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-offset-2 col-sm-10">
+                                                        <div class="pull-right">
+                                                            <button type="submit" class="btn btn-default">Cancel</button>
+                                                            <button type="submit" class="btn btn-primary">Save</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </fieldset>
+                                        </form>
+                                    </div><!-- /.col-lg-12 -->
+                                </div><!-- /.row -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+      </div><!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <!--<script src="vendor/bootstrap/js/bootstrap.min.js"></script>-->
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="vendor/raphael/raphael.min.js"></script>
+    <script src="vendor/morrisjs/morris.min.js"></script>
+    <script src="data/morris-data.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="dist/js/sb-admin-2.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/jspdf.min.js"></script>
+    <script src="js/jspdf.plugin.autotable.js"></script>
+    <script>
+    $(document).ready(function () {
+      var mySelect = $('#first-disabled2');
+
+      $('#special').on('click', function () {
+        mySelect.find('option:selected').prop('disabled', true);
+        mySelect.selectpicker('refresh');
+      });
+
+      $('#special2').on('click', function () {
+        mySelect.find('option:disabled').prop('disabled', false);
+        mySelect.selectpicker('refresh');
+      });
+
+      $('#basic2').selectpicker({
+        liveSearch: true,
+        maxOptions: 1
+      });
+    });
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <!--<script src="js/jspdf.debug.js"></script>-->
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyA19j6-VLNcXLJfBkfd_lZfFFbzg6z0Imc",
+        authDomain: "xico-netcontrol.firebaseapp.com",
+        databaseURL: "https://xico-netcontrol.firebaseio.com",
+        projectId: "xico-netcontrol",
+        storageBucket: "xico-netcontrol.appspot.com",
+        messagingSenderId: "248615705793"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/$VERSION/dragula.min.js'></script>-->
+    <script src="js/dragula.min.js"></script>
+    <script src="js/aspirante.js"></script>
+    <script src="js/moment-with-locales.js"></script>
+  </body>
+</html>

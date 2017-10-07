@@ -82,6 +82,14 @@ function guardarUsuario() {
     $('#descripcion').val('');
   }
   else {
+    let datosUsuario = {
+      puesto: puesto,
+      nombre: nombre,
+      email: email,
+      descripcion: descripcion,
+      username: username,
+    }
+    
     auth.createUserWithEmailAndPassword(email, contraseña)
     .then(function(data) {
       let uid = data.uid;;
